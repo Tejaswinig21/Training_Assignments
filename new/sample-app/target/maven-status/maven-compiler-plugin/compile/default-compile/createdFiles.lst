@@ -1,0 +1,5 @@
+com\myapp\Test.class
+com\myapp\web\filter\CalculatorServlet.class
+com\myapp\web\filter\HelloWorldServlet.class
+com\myapp\web\filter\Login.class
+com\myapp\web\filter\Myfilter.class
