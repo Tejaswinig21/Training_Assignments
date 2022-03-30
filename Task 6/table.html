@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+            border-collapse:collapse ;
+        }
+        th{
+            background-color: yellow;
+        }
+        
+    </style>
+</head>
+<body>
+    <p id="demo"></p>
+    <table id="table">
+        <tr>
+            <th>EID</th>
+            <th>E-Mail</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+        </tr>
+        <!--tr id="trow">
+            <td id="eid"></td>
+            <td id="email"></td>
+            <td id="fname"></td>
+            <td id="lname"></td>
+        </tr!-->
+    </table>
+    <script>
+        
+        var xhttp=new XMLHttpRequest();
+        xhttp.open("GET","https://reqres.in/api/users?page=1",true);
+        xhttp.onload=function(){
+            res=JSON.parse(this.responseText);
+            data=res.data;
+            //document.getElementById("demo").innerHTML=;
+            for (let i = 0; i < data.length; i++) {
+                
+                row=document.createElement("tr");
+                row.id="trow"+(i+1);
+                col=document.createElement("td");
+                col.id="eid"
+                tol=document.createElement("td");
+                pol=document.createElement("td");
+                lol=document.createElement("td");
+                aol=document.createElement("td")
+                idcell=document.createTextNode(data[i].id)
+                emailcell=document.createTextNode(data[i].email)
+                fname=document.createTextNode(data[i].first_name)
+                lname=document.createTextNode(data[i].last_name)
+                col.appendChild(idcell)
+                tol.appendChild(emailcell);
+                pol.appendChild(fname);
+                lol.appendChild(lname);
+            
+                //button
+                const btn=document.createElement("button")
+                btn.id="b"+(i+1)
+                btn.type="submit"
+                btn.textContent='Edit'
+                btn.addEventListener("click",function(){
+                    document.getElementById("trow"+(i+1)).style.background="lightyellow";
+                    document.getElementById("trow"+(i+1)).contentEditable=true;
+                    document.getElementById("b"+(i+1)).addEventListener("click",function(){
+                        
+                        document.getElementById("trow"+(i+1)).contentEditable=false;
+                    
+                    })
+                    
+
+                })
+                aol.appendChild(btn)
+
+                row.appendChild(col)
+                row.appendChild(tol)
+                row.appendChild(pol)
+                row.appendChild(lol)
+                row.appendChild(aol)
+                
+                document.getElementById("table").appendChild(row)
+                //document.getElementById("table").contentEditable=true
+                
+            }
+            //document.getElementById('trow1').style.backgroundColor="yellow"
+        }
+        xhttp.send();
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url('bg.jpg');
+        }
+        label{
+            color: black;
+            border: 2px solid black;
+            border-color: black;
+            background-color: yellow;
+            width: 120px;
+            height: 120px;
+        }
+        input{
+            border:2px solid black;
+            border-color: black;
+            border-radius: 5px;
+            margin: 1px;
+
+        }
+    </style>
+</head>
+<body style="color: aliceblue;">
+    <h1 style="color: white;text-align:center;margin: 15px;">USER REGISTRATION</h1>
+    <pre>
+    <form action="new.html" style="padding: 40px;box-sizing: border-box;border: 20px solid black;text-align: left;">
+        
+        <label for="uname" style="border-radius: 20px solid black;">User name:</label>         <input type="text" id="uname" name="uname" value="enter your username"><br>
+        <label for="fname">First name:</label>        <input type="text" id="fname" name="fname" value="enter your first name"><br>
+        <label for="lname">Last name:</label>         <input type="text" id="lname" name="lname" value="enter your last name"><br>
+        <label for="pwd">Enter Password:</label>    <input type="password" name="pwd" id="pwd"><br>
+        <label for="pw">Confirm Password:</label>  <input type="password" name="pw" id="pw"><br>
+        <img src="cor.jpg" alt="loading" style="float: right;">
+        <p style="margin-left: 40px;">choose your gender</p>
+        <input type="radio" name="gender" id="male" value="male"><label for="male">Male</label>
+        <input type="radio" name="gender" id="female" value="female"><label for="female">Female</label>
+        <p style="margin-left: 40px;">Select the languages you know</p>
+        <input type="checkbox" id="lang1" name="lang1" value="English"><label for="lang1">English</label>
+        <input type="checkbox" id="lang2" name="lang2" value="English"><label for="lang2">Hindi</label>
+        <input type="checkbox" id="lang3" name="lang3" value="English"><label for="lang3">Telugu</label>
+        <p style="margin-left: 40px;"> Enter your date of birth</p>
+        <input type="date" id="DOB" name="DOB"><input type="submit" value="submit"><br>
+        <label for="email">Enter your email:</label>    <input type="email" id="email" name="email">
+        <br>
+        <input type="submit" value="Submit">
+      </form> 
+    </pre>
+</body>
+</html>

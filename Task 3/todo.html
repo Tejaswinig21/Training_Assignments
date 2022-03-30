@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 200px;
+        }
+        ul li:hover{
+            background-color: rgb(219, 217, 217);
+        }
+        #head1{
+            color: white;
+        }
+        #inputxt{
+            width: 550px;
+            height: 40px;
+            border-color: rgb(34, 180, 238);
+            border: 0px solid white;
+        }
+        #b{
+            height: 45px;
+            width: 100px;
+            background-color: whitesmoke;
+            border-color: rgb(34, 180, 238);
+        }
+        ul{
+            margin: 0;
+            list-style: none;
+            background-color: whitesmoke;
+            border-color: whitesmoke;
+            width: 100%;
+            padding: 0px;
+            height: fit-content;
+        }
+        li{
+            border-bottom: 1px solid black;
+            height: 40px;
+        }
+        div{
+            margin: 0;
+            background-color:rgb(34, 180, 238);
+            text-align: center;
+            border: 0px solid rgb(34, 180, 238)k;
+            height: fit-content;
+            width: 100%;
+            padding: 30px 0px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    function addfun() {
+      arr.push(inputValue);
+      var li = document.createElement("li");
+      li.id="x";
+      var tik=document.createElement("input");
+      tik.type="checkbox";
+      var inputValue = document.getElementById("inputxt").value;
+      var t = document.createTextNode(inputValue);
+      li.appendChild(tik);
+      li.appendChild(t)
+      document.getElementById("myUL").appendChild(li);
+      li.addEventListener("click",function(){
+          li.style.backgroundColor="gray";
+          li.style.textDecoration="line-through";
+      })
+      heading.innerHTML="List of Todo Tasks:"+arr.length;
+    }
+    //div
+    const div1=document.createElement("div");
+    //heading
+        const heading=document.createElement("h1");
+        heading.innerText="List of Todo Tasks:3";
+        heading.id='head1';
+        div1.appendChild(heading);
+        //document.body.appendChild(heading);
+    //input
+        const inputxt=document.createElement("input");
+        inputxt.placeholder="Title";
+        inputxt.id="inputxt"
+        div1.appendChild(inputxt);
+       // document.body.appendChild(inputxt)
+    //button
+        const btn=document.createElement("button")
+        btn.id="b"
+        btn.type="submit"
+        btn.textContent='Add'
+        btn.addEventListener("click",addfun);
+        div1.appendChild(btn);
+        //document.body.appendChild(btn);
+        document.body.appendChild(div1);
+    //list items
+        const list=document.createElement("ul")
+        list.id='myUL'
+        var arr=['Breakfast','Go to bank','Exercise']
+        for(i=0;i<arr.length;i++)
+        {
+            var li1=document.createElement('li');
+            const tick=document.createElement("input");
+            tick.type="checkbox";
+            var item=document.createTextNode(arr[i]);
+            li1.appendChild(tick);
+            li1.appendChild(item);
+            list.appendChild(li1)
+            if(arr[i]=='Breakfast' || arr[i]=='Exercise'){
+                tick.checked=true;
+                li1.style.backgroundColor="gray";
+                li1.style.textDecoration="line-through"
+            }
+        }
+        document.body.appendChild(list);
+    </script>
+    
+    </body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engage</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        header{
+            display: flex;
+            background-color: rgb(46, 45, 45);
+            align-items: center;
+            justify-content: space-between;
+            color:gray;
+            padding: 1px 80px;
+            box-sizing: border-box;
+        }
+        header ul.head1>li>ul{
+            position: relative;
+            left: 0;
+            padding: 0;
+            margin: 0;
+            display: none;
+            list-style: none;
+            background-color: aliceblue;
+        }
+        header ul.head1{
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+            position: relative;
+        }
+        header ul.head1>li>a{
+            text-decoration: none;
+            color: gray;
+            padding: 16px;
+        }
+        header ul.head1 > li > a:hover {
+           background-color: rgb(27, 1, 1);
+        }
+        header ul.head1 > li:hover > ul > li > a {
+            display: block;
+            padding: 8px 12px;
+            border-bottom: 1px solid black;
+        }
+        header ul.head1 > li:hover > ul{
+        display: inline-block;
+        }
+        header ul.head1 > li{
+        position: relative;
+        }
+        .firstcol{
+            width: 40%;
+        }
+        .secondcol{
+            width: 20%;
+            display: flex;
+            justify-items: flex-end;
+            justify-content: space-around;
+            height: 30px;
+
+        }
+        .s1{
+            display: flex;
+            background-color: rgb(118, 190, 10);
+            color: greenyellow;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0 120px;
+            height: 200px;
+        }
+        .s1>h1{
+            font-size: 48px;
+            margin-bottom: 0;
+            margin-top: 25px;
+        }
+        .container{
+            margin: 0;
+            height: 430px;
+            display: flex;
+            background-color: whitesmoke;
+            list-style: none;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+        ul.container>li{
+            width: 300px;
+            height: 200px;
+        }
+        #x{
+            
+            background-color: gainsboro;
+            padding: 100px 50px;
+            text-align: center;
+            color: rgb(180, 179, 179);
+            font-size: 48px;
+            margin-top: 0;
+            margin-bottom: 0;
+            border-radius: 5px;
+        }
+        #y{
+            color: rgb(0, 153, 255);
+            font-weight: bold;
+        }
+        #z{
+            color: gray;
+        }
+        .box{
+            padding-top: 20px;
+            padding-bottom: 10px;
+            margin: 0;
+            height: 200px;
+            display: flex;
+            list-style: none;
+            background-color: rgb(228, 165, 6);
+            justify-content: space-around;
+        }
+        ul.box>li{
+            width: 300px;
+        }
+        ul.box>li>h1{
+            font-size: medium;
+        }
+        .last{
+            padding: 0 100px;
+        }
+        .last>a{
+            text-decoration: none;
+            color: rgb(33, 133, 248);
+        }
+        span{
+            font-weight: lighter;
+            font-size: small;
+            color: gray;
+        }
+        .s2{
+            background-color: whitesmoke;
+            padding: 0 120px;
+        }
+        #a{
+            border: white;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        #las{
+            color: gray;
+        }
+        #b{
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="firstcol">
+        <ul class="head1">
+            <li> <i class="fa-solid fa-fire-flame-curved"></i> <a href="#"> Logo</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Services</a><i class="fa-solid fa-caret-down"></i>
+                <ul>
+                    <li><a href="#">service 1</a></li>
+                    <li><a href="#">service 2</a></li>
+                    <li><a href="#">service 3</a></li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+        <div class="secondcol">
+            <input type="text" id="b">
+            <button type="button" id="a">Search</button>
+        </div>
+    </header>
+    <section class="s1">
+        <h1><i class="fa-solid fa-ellipsis-vertical"></i><i class="fa-solid fa-ellipsis-vertical"></i><i class="fa-solid fa-ellipsis-vertical"></i> Dramatically Engage</h1>
+        <p>Objectively innovate empowered manufactured products whereas parallel platforms.</p>
+        <button type="button" id="a">Engage Now</button>
+    </section>
+    <section class="s2">
+        <h1>Superior Collaboration <span>Visualize Quality</span></h1>
+        <hr>
+        <p style="color: gray;">Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital without superior Collaboration and idea-sharing.
+            Holistically Pontificate installed base portals after maintainable products.</p>
+    </section>
+    <ul class="container">
+        <li>
+            <p id="x">700x300</p>
+            <p id="y">Effeciently Unleash</p>
+            <p id="z">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, neque. Numquam cupiditate asperiores atque ipsam debitis natus impedit odit nisi perferendis distinctio? Assumenda, quas! Optio!</p>
+        </li>
+        <li>
+            <p id="x">700x300</p>
+            <p id="y">Completely Synergize</p>
+            <p id="z">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, neque. Numquam cupiditate asperiores atque ipsam debitis natus impedit odit nisi perferendis distinctio? Assumenda, quas! Optio!</p>
+        </li>
+        <li>
+            <p id="x">700x300</p>
+            <p id="y">Dynamically Procrastinate</p>
+            <p id="z">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, neque. Numquam cupiditate asperiores atque ipsam debitis natus impedit odit nisi perferendis distinctio? Assumenda, quas! Optio!</p>
+        </li>
+    </ul>
+    <ul class="box">
+        <li>
+            <h1><i class="fa-solid fa-fire-flame-curved"></i> Dynamically Procrastinate</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis pariatur laborum possimus, consequuntur quod necessitatibus fugiat nulla itaque quidem! Asperiores omnis consequatur fugiat beatae?</p>
+            <button type="button" id="a">Procrastinate</button>
+        </li>
+        <li>
+            <h1><i class="fa-solid fa-cloud-arrow-up"></i> Effeciently Unleash</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat eius impedit a? Quam nulla dolore modi itaque assumenda provident sit eligendi. Placeat, excepturi?itaque assumenda provident sit eligendi. Placeat</p>
+            <button type="button" id="a">Unleash</button>
+        </li>
+        <li>
+            <h1><i class="fa-solid fa-leaf"></i> Completely Synergize</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, voluptatum veritatis sequi hic ab quam architecto delectus ipsa in animi officiis soluta aliquid doloremque dolorem quaerat fuga nulla numquam.</p>
+            <button type="button" id="a">Synergize</button>
+        </li>
+    </ul>
+    <section class="last">
+        <a href="#">Terms & Conditions </a> | <a href="#"> Privacy Policy </a> | <a href="#"> Contact</a>
+        <p id="las">Copyright <i class="fa-regular fa-copyright"></i> Example.com 2015</p>
+    </section>
+</body>
+</html>

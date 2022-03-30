@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 100%;
+            height: 50%;
+        }
+        ul{
+            display: flex;
+            list-style: none;
+        }
+        li{
+            border: 2px solid black;
+            background-color: rgb(252, 240, 240);
+        }
+        #email{
+            background-color: black;
+        }
+        #fn{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>The XMLHttpRequest Object</h1>
+    <ul id="edata"></ul>
+    <p id="demo"></p>
+    <ul id="innerul"></ul>
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response=JSON.parse(xhttp.responseText);
+            //document.getElementById("edata").innerHTML=response; 
+            var data=response.data;
+            var str=""
+            obj={"id":111,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"};
+            response.data.push(obj)
+            response.data[0].id=111;
+            for (let i = 0; i < data.length; i++) {
+                var l1=document.createElement("li");
+                var idnode=document.createTextNode(data[i].id+" ")
+                var fnode=document.createTextNode(data[i].first_name+" ")
+                fnode.id="fn"
+                var lnode=document.createTextNode(data[i].last_name)
+                var b=document.createElement("br")
+                var enode=document.createTextNode("E-mail : "+data[i].email)
+                enode.id="email";
+                var image=document.createElement("img")
+                image.setAttribute("src",data[i].avatar)
+                l1.appendChild(image)
+                l1.appendChild(idnode)
+                l1.appendChild(fnode)
+                l1.appendChild(lnode)
+                l1.appendChild(b)
+                l1.appendChild(enode)
+                //document.getElementById("inner").appendChild(l1)
+                document.getElementById("edata").appendChild(l1)
+
+            }
+            
+            
+            //document.write(response.data[0].id)
+            //document.getElementById("demo").innerHTML=this.responseText;
+    }
+    };
+
+  //xhttp.open("POST", "https://reqres.in/api/users?page=1", true);
+  //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  //let xyz=JSON.stringify(response)
+
+  xhttp.open("GET", "https://reqres.in/api/users?page=1", true);
+  xhttp.send();
+    </script>
+</body>
+</html>

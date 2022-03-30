@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <style>
+        hr{
+            background-color: orange;
+        }
+        .navbar{
+            background-color: white;
+            box-shadow: inset;
+        
+        }
+        ul.nav>li:hover>a:hover{
+            color: orange;
+        }
+        .navbar-brand{
+            font-size: 30px;
+            padding: auto;
+        }
+        h1{
+            font-weight: bolder;
+    
+        }
+        
+        ul>li.col-sm-3{
+            
+            
+            border-radius: 3px;
+            padding: 20px;
+        }
+        ul.list-unstyled>li:hover>a:hover{
+            color: orange;
+            text-decoration: none;
+        }
+        p.well{
+            height: 200px;width: auto;
+            text-align: center;border-radius: 10px;padding: 30px;
+            background-color: white;   
+        }
+        ul>li>a{
+            color: black;
+            font-weight: 100%;
+        }
+        ul.list-group>li.list-group-item{
+            font-weight: bolder;
+            background-color: rgb(250, 245, 236);
+            border-left: 0;
+            border-right: 0;
+        }
+        ul.list-group>li.list-group-item>i{
+            color: black;
+            font-size: small;
+        }
+        ul.h3{
+            display: flex;
+            justify-content: space-around;
+        }
+        ul.list-unstyled>li>p>i{
+            font-size: 30px;
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-default" style="margin-bottom: 0;">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Ninestars</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" style="color: orange;">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Drop Down<span class="glyphicon glyphicon-menu-down"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Services</a> </li>
+                    <li><a href="#">Marketing</a> </li>
+                    <li><a href="#">Product</a> </li>
+                </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+                <button class="btn navbar-btn" style="border-radius: 20px;background-color: orange;color: white;">Get Started</button>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container" style="margin-top: 0;background:linear-gradient(0deg, rgb(250, 245, 236), rgb(250, 245, 236)), url(http://lorempixel.com/800/600/nature/2);">
+        <div class="col-sm-6" style="padding: 0px;margin-top: 50px;">
+            
+                <h1>Better Digital Experience with Ninestars</h1>      
+                <p>We are a team of talented designers making websites with bootstrap</p>
+                <button class="btn" style="background-color: orange;color: white;">Get Started</button>
+        </div>
+        <div class="col-sm-6">
+            <img src="https://www.edl.gr/wp-content/uploads/2019/08/undraw_maker_launch_crhe.svg" alt="cant load" height="300px" width="100%">
+        </div>
+    </div>
+    <div class="container" style="margin-top: 30px;">
+        <div class="col-sm-6">
+            <img src="https://affios.com/wp-content/uploads/2018/11/Planning-with-Client-Illustration.svg" alt="cant load" height="300px" width="100%">
+        </div>
+        <div class="col-sm-6">
+            <div style="margin-top: 50px;">
+                <h1>aliquid quo minus neque accusanti</h1>
+                <p>optio dolor omnis incidunt quo voluptas corporis animi voluptatum necessitatibus consequuntur cupiditate ducimus aliquid dicta assumenda cumque?</p>
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-sm-6"><i class="fa-solid fa-file-lines" style="font-size: 30px;color: orange;"></i><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus quis deserunt</p></div>
+                <div class="col-sm-6"><i class="fa-solid fa-cube" style="font-size: 30px;color: orange;"></i><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia iste ex ullam?</p></div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background-color: rgb(250, 245, 236);">
+        <div class="h2 text-center">
+            <small>Services</small>
+            <h1> Check out the great services we offer</h1>
+            <hr style="width: 60px;border: 2px solid orange;">
+        </div>
+        <div>
+            <ul class="list-unstyled" style="align-content: space-between;">
+                <li class="col-sm-3"><p class="well" ><i class="fa-solid fa-basketball"></i><br><b>Lorem ipsum</b><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quisquam laborum inventore rem maiores facilis ea ratione dolores placeat harum!</p></li>
+                <li class="col-sm-3"><p class="well" ><i class="fa-solid fa-file-lines"></i><br><b>Lorem ipsum</b><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam asperiores ducimus nihil laborum alias tempore et voluptate rerum nulla rem.</p></li>
+                <li class="col-sm-3"><p class="well" ><span class="glyphicon glyphicon-time" style="font-size: 30px;color: orange;"></span><br><b>Lorem ipsum</b><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, aperiam ut. Saepe, itaque assumenda, ecto iure sint aperiam maiores?</p></li>
+                <li class="col-sm-3"><p class="well" ><i class="fa-solid fa-earth-africa"></i><br><b>Lorem ipsum</b><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quae ipsam minus eaque soluta ex facilis. Quasi molestiae voluptatum</p></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="h2 text-center">
+            <small>Portfolio</small>
+            <h1> Check out our beautiful Portfolio</h1>
+            <hr style="width: 60px;border: 2px solid orange;">
+        </div>
+        <div>
+             <ul class="list-unstyled list-inline text-center">
+                 <li><a href="#" style="color: orange;">All</a></li>
+                 <li><a href="#">App</a></li>
+                 <li><a href="#">Card</a></li>
+                 <li><a href="#">Web</a></li>
+             </ul>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="thumbnail" style="background-color: whitesmoke;">
+                <a href="#" target="_blank">
+                  <img src="https://th.bing.com/th/id/OIP.0Pj8kViycfOsFSl4HjbJHQHaJ4?w=193&h=257&c=7&r=0&o=5&dpr=1.35&pid=1.7"  alt="Lights" style="height: 233px;" >
+                </div>
+                </a>
+              
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail" style="background-color: rgb(241, 126, 165);">
+                <a href="#" target="_blank">
+                  <img src="https://img.freepik.com/free-vector/juice-ad-with-gradients-letterings_23-2148374120.jpg?w=900" alt="Nature">
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail" style="background-color: rgba(217, 224, 228, 0.534);">
+                <a href="#" target="_blank">
+                  <img src="https://img.freepik.com/free-psd/cosmetic-tube-mockup_1332-196.jpg?size=626&ext=jpg" alt="Fjords" style="width:100%">
+                </a>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="thumbnail" style="background-color: rgb(216, 216, 23);">
+                <a href="#" target="_blank">
+                  <img src="https://www.thaibestsellers.com/wp-content/uploads/2020/09/Mask-Junhom-Herbal-Avocado-Lemon2.jpg"  alt="Lights" style="height: 233px;" >
+                </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <a href="#" target="_blank">
+                  <img src="https://theredtree.co.uk/wp-content/uploads/2019/04/indie-beauty-trends-beauty-money-la.jpg" alt="Nature">
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail" style="background-color: whitesmoke;">
+                <a href="#" target="_blank">
+                  <img src="https://d39l2hkdp2esp1.cloudfront.net/img/type/T14383_3x/c/T14383_05.jpg?20210711015541" alt="Fjords" style="width:100%">
+                </a>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+              <div class="thumbnail" style="background-color: whitesmoke;">
+                <a href="#" target="_blank">
+                  <img src="https://images.squarespace-cdn.com/content/v1/5dd1826dcb3ab6681a683ba6/1617211644664-CB0AM4LAFGE5UCTWPUFH/What%2Bis%2Ban%2Bevoked%2Bset.jpg?format=1000w"  alt="Lights" style="height: 233px;" >
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail" style="background-color: rgb(241, 237, 237);">
+                <a href="#" target="_blank">
+                  <img src="https://av.sc.com/lk/content/images/lk-terms-and-conditions-400x-400y.jpg" alt="Nature" style="height: 233px;">
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail" style="background-color: rgb(241, 237, 237);">
+                <a href="#" target="_blank">
+                  <img src="https://www.thespruceeats.com/thmb/XC5U2ZiRJIy89I2PPP8aKuob86w=/3797x2848/smart/filters:no_upscale()/perfect-hard-boiled-eggs-995510-Hero_3-03d1b108d1ca489dad9e1f1d7fdba73f.jpg" alt="Fjords" style="height: 233px;">
+                </a>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background-color: rgb(250, 245, 236);">
+        <div class="h2 text-center">
+            <small>F.A.Q</small>
+            <h1> Frequently Asked Questions</h1>
+            <hr style="width: 60px;border: 2px solid orange;">
+        </div>
+        <div class="container">
+            <ul class="list-group">
+                <li class="list-group-item "><i class="fa-solid fa-angle-down"></i>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, quod?</li>
+                <li class="list-group-item"><i class="fa-solid fa-angle-down"></i>  ducimus modi illum reiciendis tenetur! Consectetur, exercitationem?</li>
+                <li class="list-group-item"><i class="fa-solid fa-angle-down"></i>  eos Necessitatibus molestias  laboriosam quos nostrum commodi?</li>
+                <li class="list-group-item"><i class="fa-solid fa-angle-down"></i>  voluptatem nisi excepturi asperiores laudantium veritatis?</li>
+                <li class="list-group-item"><i class="fa-solid fa-angle-down"></i>  At obcaecati voluptatum maiores tempore. Ut, quos magnam consequuntur provident obcaecati?</li>
+                <li class="list-group-item "><i class="fa-solid fa-angle-down"></i>  nihil itaque iure incidunt repellat dolor et vero?</li>
+            </ul>
+        </div>
+    </div>
+        <div class="container">
+            <div class="h2 text-center">
+                <small>Team</small>
+                <h1> Our team is always here to help</h1>
+                <hr style="width: 60px;border: 2px solid orange;">
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <a href="#" target="_blank">
+                      <img src="https://www.netlight.com/wp-content/uploads/martinhommer-1-320x320.jpg"  alt="Lights" style="height: 270px;width: 230px;" >
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" target="_blank">
+                      <img src="https://i.pinimg.com/736x/8b/68/9e/8b689e09b7e45051e58f43afc7fa4771--business-portrait.jpg" alt="Nature" style="height: 270px;width: 230px;">
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" target="_blank">
+                      <img src="https://www.elevator-ventures.com/wp-content/uploads/sites/2/2020/05/Krisztian_Gyepes_pic_reduced_size-e1589805028779.jpg" alt="Fjords" style="height: 270px;width: 230px;">
+                    </a>
+                </div>
+                <div class="col-md-3">
+                      <a href="#" target="_blank">
+                        <img src="https://th.bing.com/th/id/OIP.gA14jOeEXPKNkaYXBhSL0wHaLH?pid=ImgDet&w=1417&h=2126&rs=1" alt="Fjords" style="height: 270px;width: 230px;">
+                      </a>
+                </div>
+            </div>
+       </div>
+       <div class="container" style="background-color:rgb(250, 245, 236) ;margin-top: 40px;height: 250px;">
+        <div class="h2 text-center">
+            <small>Clients</small>
+            <h1> They trust us</h1>
+            <hr style="width: 60px;border: 2px solid orange;">
+        </div>
+        
+        <ul class="h3 list-inline">
+            <li style="font-family: Arial,sans-serif;font-weight: 10%;color: gray;">Life<span style="color: rgba(123, 209, 123, 0.644);">Groups</span></li>
+            <li style="font-family: brush script MT;font-weight: bolder;color: rgba(255, 99, 71, 0.63);">Lilly</li>
+            <li style="font-weight: bolder;"><span class="glyphicon glyphicon-certificate" style="color: red;"></span>citrus</li>
+            <li ><span class="glyphicon glyphicon-shopping-cart" style="color: greenyellow;"></span><small style="font-weight:bolder;color: rgba(0, 0, 0, 0.658);font-size: large;"> Trustly</small></li>
+            <li style="font-family: garamond,serif;font-weight: bolder;color: rgba(0, 0, 0, 0.589);">oldendorff</li>
+            <li style="color: gray;font-weight: lighter;"><i class="fa-brands fa-google" style="border: 2px solid gray;border-radius: 10px;color: tomato;background-color: gray;"></i> grabyo</li>
+        </ul>
+    </div>   
+    <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" style="border: 1px solid orange;"></li>
+                <li data-target="#myCarousel" data-slide-to="1" style="border: 1px solid orange;"></li>
+                <li data-target="#myCarousel" data-slide-to="2" class="active" style="border: 1px solid orange;background-color: orange;"></li>
+                <li data-target="#myCarousel" data-slide-to="3" style="border: 1px solid orange;"></li>
+                <li data-target="#myCarousel" data-slide-to="4" style="border: 1px solid orange;"></li>
+                <li data-target="#myCarousel" data-slide-to="5" style="border: 1px solid orange;"></li>
+                <li data-target="#myCarousel" data-slide-to="6" style="border: 1px solid orange;"></li>
+                <li data-target="#myCarousel" data-slide-to="7" style="border: 1px solid orange;"></li>
+              </ol>
+       </div>
+    </div>    
+    <div class="container" style="background-color: rgb(253, 252, 252)">
+        <div class="h2 text-center">
+            <small>Contact Us</small>
+            <h1> Contact us to get Started</h1>
+            <hr style="width: 60px;border: 2px solid orange;">
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="well" style="background-color: white; border-top: 2px solid orange;border-bottom: 2px solid orange; border-radius: 0px;">
+                    <p style="font-weight: bolder;font-size: 20px;"><i class="fa-solid fa-location-dot" style="color: orange;"></i> Location</p>
+                    <p>A108 Adam Street, New York,NY535022</p>
+                    <p style="font-weight: bolder;font-size: 20px;"><i class="fa-solid fa-envelope" style="color: orange;"></i> Email</p>
+                    <p>xyz@example.com</p>
+                    <p style="font-weight: bolder;font-size: 20px;"><i class="fa-solid fa-mobile-screen-button" style="color: orange;"></i> Call</p>
+                    <p>+1 54336 46788</p>
+                    <img src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_800,h_450/https://www.newtonbaba.com/wp-content/uploads/2019/05/Google-maps-Traffic-color.jpg" alt="" style="height: 200px;width: 400px;">
+                </div>
+            </div>
+            <div class="col-sm-7">
+            <div class="well" style="background-color: white; border-top: 2px solid orange;border-bottom: 2px solid orange; border-radius: 0px;">
+                <form action="/action_page.php" id="usrfrm">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="name">Your Name:</label>
+                                <input type="text" class="form-control" id="nme" placeholder="Your Name" name="nme">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="email">Your Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Your Email" name="email">
+                              </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pwd">Subject:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Message:</label>
+                        <br>
+                        <textarea rows="4" cols="50" name="comment" form="usrfrm" id="usrfrm" style="width: 100%;height: 180px;">
+                            </textarea>
+                    </div>
+                    <div class="text-center"><button type="submit" class="btn btn-default" style="background-color: orange;padding: 5px 25px;">Send Message</button></div>
+                    
+                  </form>
+            </div>
+            
+        </div>
+        </div>
+    </div>
+    <div class="container" style="background-color:rgb(250, 245, 236) ;margin-top: 0 ;height: 230px;">
+        <div class="h2 text-center" >
+            <h4 style="font-weight: bolder;"> Join our Newsletter</h4>
+            <small>Lorem ipsum dolor sit, amet consectetur adipisicing elit</small>
+            <hr style="width: 60px;border: 2px solid orange;">
+            <input type="text" name="search" style="border: 1px solid rgb(250, 245, 236);margin: 0;">
+            <span><button class="btn btn-default" style="width: auto;background-color: orange;">Subscribe</button></span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h3>Ninestars</h3>
+                <p>New York</p>
+                <p>United States</p>
+                <br>
+                <p><b>Phone:</b>+1 54336 46788</p>
+                <p><b>Email:</b>xyz@example.com</p>
+            </div>
+            <div class="col-sm-3">
+                <h4 style="font-weight: bolder;">Useful Links</h4>
+                <ul class="list-unstyled">
+                    <li><span class="glyphicon glyphicon-menu-right" style="color: orange;padding: 10px 0;"></span> Home</li>
+                    <li><span class="glyphicon glyphicon-menu-right" style="color: orange;padding: 10px 0;"></span> About</li>
+                    <li><span class="glyphicon glyphicon-menu-right" style="color: orange;padding: 10px 0;"></span> Services</li>
+                    <li><span class="glyphicon glyphicon-menu-right" style="color: orange;padding: 10px 0;"></span> Terms of services</li>
+                    <li><span class="glyphicon glyphicon-menu-right" style="color: orange;padding: 10px 0;"></span> Privacy Policy</li>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <h4 style="font-weight: bolder;">Our Services</h4>
+                <ul class="list-unstyled">
+                    <li><span class="glyphicon glyphicon-menu-right" style="color: orange;padding: 10px 0;"></span> Web Design</li>
+                    <li><span class="glyphicon glyphicon-menu-right" style="color: orange;padding: 10px 0;"></span> Web Development</li>
+                    <li><span class="glyphicon glyphicon-menu-right" style="color: orange;padding: 10px 0;"></span> Product Management</li>
+                    <li><span class="glyphicon glyphicon-menu-right" style="color: orange;padding: 10px 0;"></span> Marketing</li>
+                    <li><span class="glyphicon glyphicon-menu-right" style="color: orange;padding: 10px 0;"></span> Graphic Design</li>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <h4 style="font-weight: bolder;">Our Social Networks</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                <i class="fa-brands fa-twitter" style="border: 2px solid orange;border-radius: 15px;background-color: orange;color: white;"></i><i class="fa-brands fa-facebook" style="border: 2px solid orange;border-radius: 15px;background-color: orange;color: white;"></i> <i class="fa-brands fa-instagram" style="border: 2px solid orange;border-radius: 15px;background-color: orange;color: white;"></i> <i class="fa-brands fa-skype" style="border: 2px solid orange;border-radius: 15px;background-color: orange;color: white;"></i> <i class="fa-brands fa-linkedin-in" style="border: 2px solid orange;border-radius: 15px;background-color: orange;color: white;"></i>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background-color:rgb(250, 245, 236) ;">
+        <ul class="list-unstyled" style="display: flex;justify-content: space-between;align-content: center;">
+            <li><span class="glyphicon glyphicon-copyright-mark"></span> Copyright <span style="border: 2px solid rgb(247, 218, 165);width: 10px;height: 5px;background-color: rgb(247, 218, 165);color: rgb(247, 218, 165);">xyzzz</span> All Reserved</li>
+            <li>Designed by <span style="border: 2px solid rgb(247, 218, 165);width: 10px;height: 5px;background-color: rgb(247, 218, 165);color: rgb(247, 218, 165);">xyzzzz</span></li>
+        </ul>
+    </div>
+</body>
+</html>
