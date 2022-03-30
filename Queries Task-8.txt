@@ -1,0 +1,42 @@
+//Employee
+1. SELECT * FROM employee e inner join project_employee_mapping pem on e.id =pem.employee_id join projects p on pem.project_id =p.id;
+2. SELECT * FROM employee e left join project_employee_mapping pem on e.id =pem.employee_id left join projects p on pem.project_id =p.id;
+3. SELECT * FROM employee e right join project_employee_mapping pem on e.id =pem.employee_id right join projects p on pem.project_id =p.id;
+4. SELECT id,name  FROM projects p union select id,name  FROM department d ;
+
+//Process
+1. SELECT p.name ,s.name ,t.name ,c.name from process p join process_stage_mapping psm on p.ID =psm.process_id 
+join stage s on psm.stage_id =s.ID 
+join stage_task_mapping stm on s.ID =stm .stage_id 
+join task t on stm.task_id =t.ID 
+join task_checklist_mapping tcm on t.ID =tcm.task_id 
+join checklist c on tcm.checklist_id =c.ID where p.ID =1 ;
+
+//Eventtool
+3. select u.id,COUNT(c.event_id)as paid,COUNT(r.event_id)as refused 
+from `user` u left join contribution c on u.id =c.user_id  
+left join refused r on r.user_id =u.id GROUP by u.id;
+
+4. SELECT u.id,sum(c.amount)  from `user` u left join contribution c on u.id =c.user_id GROUP BY u.id  ;
+
+5. SELECT g.id ,COUNT(ug.user_id),g.name ,g.created_on,u.name as created_by 
+from user_group ug join `group` g on g.id =ug.group_id 
+join `user` u on g.created_by =u.id group by ug.group_id;  
+
+
+
+task-9
+select e.name,h.name ,c.cycle_year,c.insurance_provider  from employee e 
+join emp_hr eh on e.id =eh.emp_id join hr h on h.id =eh.hr_id join cyclemanagement c on c.hr_id =h.id ; 
+
+SELECT e.name,t.amount, from employee e left join employee_topup et on e.id =et.emp_id join topup t on t.id =et.topup_id join dependent d on d.empid =e.id ;
+
+SELECT e.name,n.nominee_name ,n.relation  from employee e  join nominee n on 
+n.emp_id =e.id ; 
+
+select e.name,count(d.dependent_name) from employee e left join dependent d  on e.id =d.empid group by e.id  ; 
+
+select e.name from employee e join employee_topup et on e.id =et.emp_id where et.optin =1;
+
+select t.amount ,count(et.optin) from topup t left join employee_topup et 
+on t.id =et.topup_id group by et.topup_id ;
