@@ -1,0 +1,42 @@
+A company can have different branches located in different places.
+
+An office has several departments. department has a name and location
+All locations have the same departments.
+
+Each department has some employees working in it. Employees are registered with their
+name,age,DOB,salary.
+An employee can act in more than one role.more than one job titles.
+
+Projects are assigned to department where employees of that department work on that project.
+Project has a start time and end time
+
+
+
+department 
+1 department has many employees
+1 department can work on many projects
+1 department can be located in many places
+
+1 employee can work on any number of projects
+1 employee can work in 1 department only
+1 employee can have multiple job titles
+
+
+
+tables
+1. department
+2. employee
+3. job_title
+4. Project
+5. Location
+
+
+
+
+
+
+
+
+
+
+
