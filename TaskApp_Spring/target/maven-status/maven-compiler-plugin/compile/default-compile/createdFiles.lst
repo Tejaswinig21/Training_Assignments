@@ -1,0 +1,4 @@
+com\model\Reminder.class
+com\services\DatabaseReminderServiceImpl.class
+com\services\ReminderService.class
+com\controllers\ReminderController.class

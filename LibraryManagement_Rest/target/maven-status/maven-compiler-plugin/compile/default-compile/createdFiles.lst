@@ -1,0 +1,4 @@
+service\BookService.class
+service\InMemoryBookServiceImpl.class
+servlet\LibraryServlet.class
+model\Book.class
