@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [SanitySuite]" guice-stage="DEVELOPMENT" verbose="10">
+  <test thread-count="5" name="Test1(failed)" verbose="10">
+    <classes>
+      <class name="WaveKart">
+        <methods>
+          <include name="placeOrder"/>
+          <include name="searchBar"/>
+          <include name="cancelOrder"/>
+          <include name="logOut"/>
+          <include name="launchDriver"/>
+          <include name="checkBoxForOutOfStock"/>
+          <include name="login"/>
+          <include name="quitDriver"/>
+        </methods>
+      </class> <!-- WaveKart -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+</suite> <!-- Failed suite [SanitySuite] -->
