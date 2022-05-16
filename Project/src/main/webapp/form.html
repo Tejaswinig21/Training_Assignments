@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto+Condensed&family=Roboto:wght@300&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+    <style>
+
+body{
+             font-family: 'Roboto', sans-serif;
+        }
+#navid{
+            color: white;
+        }
+        ul.nav>li:hover>a#navid:hover{
+            color: orange;
+        }
+        ul>li>button#btn{
+            background-color: orange;
+            border: 0px;
+            border-radius: 20px;
+            padding: 5px 10px;
+            width: 80px;
+        }
+        
+        .dot{
+            float: right;
+        }
+        
+        div.center{
+            margin: auto;
+            width: 70%;
+        }
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: rgb(246, 8, 8);
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+#snackbar1 {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: rgb(18, 177, 18);
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+#snackbar1.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+    </style>
+</head>
+<body onload="getCategoriesOptions()" style="background-color: rgb(236, 235, 235);">
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-light" style="margin-bottom: 0px;font-size: 16px;background-color: white;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="foodZone.html" style="padding:15px 5px;font-size: 16px;">foodZone</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="Dashboard.html">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Categories.html">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="NewOrderPage.html">Billing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Invoice.html">Invoices</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="text" placeholder="Search">
+              <button class="btn btn-primary" type="button">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container-fluid row" style="margin:0%;padding: 20px;">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" style="margin-top: 10px;background-color: white;padding-bottom: 50px;padding-top: 20px;">
+            <h1 style="text-align: center;color: #0d6efd;">ADD ITEMS</h1>
+                <div class="well center" style="background-color: white; border-top: 2px solid #0d6efd;border-bottom: 2px solid #0d6efd; border-radius: 0px;padding-left: 0%;padding-right: 0%;width: 80%;">
+                    <br>
+                    <form class="" id="myForm">
+                        <div class="center">
+                          <label for="validationDefault01" class="form-label">Item</label>
+                          <input type="text" class="form-control" id="item"  required>
+                        </div>
+                        <div class="center">
+                          <label for="validationDefault02" class="form-label">Price</label>
+                          <input type="number" class="form-control" id="price" min="1" max="2000" oninput="checkPrice()" required>
+                          <div class="" id="priceToolTip" style="color: red;font-size: 12px;font-weight: bolder;padding: 5px;"></div>
+                        </div>
+                        
+                        <div class="center">
+                          <label for="validationDefault04" class="form-label">Select Category</label>
+                          <select class="form-select" id="selectCategory" required>
+                            <option selected disabled value="">Choose...</option>
+                          </select>
+                        </div>
+                        <br>
+                        <div class="text-center">
+                          <button class="btn btn-secondary" type="button" onclick="window.location.href='Categories.html'" style="margin-right: 10px;background-color: rgb(46, 45, 45);border-radius: 10px;">Go Back</button><button class="btn btn-primary" type="submit" style="border-radius: 10px;width: 80px;">Add</button>
+                        </div>
+                        <br>
+                      </form>
+
+            </div>
+            
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+
+    <div id="snackbar"></div>
+    <div id="snackbar1"></div>
+
+<script>
+          document.getElementById("myForm").addEventListener("submit",async function(event){
+
+            event.preventDefault();
+
+            var i=document.getElementById("item").value;
+            var p=document.getElementById("price").value;
+              const url = 'http://localhost:8081/Project/getItems' 
+                      const res = await fetch(url)
+                     .then(response => response.json());
+                      console.log('Fetched from: ' + url);
+                      console.log(res);
+            f=0;
+            for(let i=0;i<res.length;i++)
+            {
+
+            if(document.getElementById("item").value==res[i].item){
+                f=1;
+                break;
+            }
+            }
+            if(f==1){
+                var y = document.getElementById("snackbar");
+                y.innerHTML="Item Already Exists"
+                y.className = "show";
+                setTimeout(function(){ y.className = y.className.replace("show", ""); }, 3000);
+           }
+           else{
+
+            const url1 = 'http://localhost:8081/Project/getCategories' 
+                      const result = await fetch(url1)
+                     .then(response => response.json());
+                      console.log('Fetched from: ' + url1);
+                      console.log(result);
+  
+                  for(var k=0;k<result.length;k++){
+                    if(document.getElementById("selectCategory").value==result[k].category){
+                      catId=result[k].categoryId;
+                      
+                    }
+                  }
+  
+                  const url2="http://localhost:8081/Project/addItems"
+                  let data1={
+                  
+                  categoryId:catId
+  
+                   }
+                  let data={
+                  item:i,
+                  price:p,
+                  category:document.getElementById("selectCategory").value,
+                  categoryClass:data1
+  
+                   };
+  
+              params={
+                  method:'POST',
+                  headers:{
+                      'Access-Control_Allow_Origin':"*",
+                      'Content-Type':'application/json',
+                      'mode':'no-cors',
+                      'Accept':'application/json'
+                  },
+                  body : JSON.stringify(data)
+              }
+              await fetch(url2,params).then((response)=>{response.json()})
+              .then(data>console.log(data));
+
+
+                var y = document.getElementById("snackbar1");
+                y.innerHTML="Added Successfully"
+                y.className = "show";
+                setTimeout(function(){ y.className = y.className.replace("show", ""); }, 3000);
+                //reDirect();
+
+                document.getElementById("item").value=""
+                document.getElementById("price").value=""
+                document.getElementById("selectCategory").value=""
+            }
+              
+              
+          })
+
+
+          function reDirect(){
+            window.location.href="Categories.html"
+          }
+          function checkPrice(){
+              var p=document.getElementById("price").value;
+              if(p<1 || p>2000){
+                  
+                  document.getElementById("priceToolTip").innerHTML="*Enter a valid price"
+                  
+                  document.getElementById("price").style.borderColor="red"
+              }
+
+              else{
+                document.getElementById("priceToolTip").innerHTML=""
+                document.getElementById("price").style.borderColor="gainsboro"
+              }
+              
+          }
+
+          async function getCategoriesOptions(){
+
+            const url1 = 'http://localhost:8081/Project/getCategories' 
+            const data = await fetch(url1).then(response => response.json());
+            console.log('Fetched from: ' + url1);
+            console.log(data);
+
+            for(let i=0;i<data.length;i++)
+            {
+                
+                var option=document.createElement("option");
+                option.appendChild(document.createTextNode(data[i].category))
+                document.getElementById("selectCategory").appendChild(option)
+                
+            }
+          }
+      </script>
+</body>
+</html>

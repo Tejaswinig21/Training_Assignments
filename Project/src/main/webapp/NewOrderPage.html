@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto+Condensed&family=Roboto:wght@300&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+ 
+<style>
+    td,th{
+        font-size: 14px;
+    }
+    .btn-primary{
+        font-size: 12px;
+    }
+    body{
+             font-family: 'Roboto', sans-serif;
+        }
+.btn-secondary{
+          border: none;
+            outline: none;
+            outline-style: none;
+            outline-color: white;
+            border-radius: 0px;
+            background-color: white;
+            color: black;
+            font-size: 12px;
+        }
+.sidenav {
+          height: 100%;
+          width: 160px;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: white;
+          overflow-x: hidden;
+          padding-top: 0px;
+          margin-top: 70px;
+        }
+        
+        .sidenav a {
+          padding: 6px 8px 6px 16px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+        }
+        
+        .sidenav a:hover {
+          color: #f1f1f1;
+        }
+        
+        .main {
+          margin-left: 160px; /* Same as the width of the sidenav */
+          font-size: 14px; /* Increased text to enable scrolling */
+          padding: 0px;
+        }
+        
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.navbar{
+  width: 100%;
+  position: fixed;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+div::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+.list-group-item{
+  
+}
+</style>
+</head>
+<body style="background-color: rgb(236, 235, 235);" onload="loadCategories();loadItems()">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light" style="margin-bottom: 0px;font-size: 16px;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="foodZone.html" style="padding:15px 5px;font-size: 16px;">foodZone</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="Dashboard.html">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Categories.html" >Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="NewOrderPage.html" style="color: #0d6efd;">Billing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Invoice.html">Invoices</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="text" placeholder="Search">
+              <button class="btn btn-primary" type="button">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+<div class="sidenav">
+  <h5 class="px-3 py-3 " style="background-color: #0d6dfd20;color: #0d6efd;border-left: 5px solid #0d6efd;">Categories</h5>
+    <div class="list-group py-3" id="categories">
+        
+    </div>
+</div>
+<!-- <button class="btn" onmouseover=">hi</button> -->
+<div class="main">
+
+    <div class="row">
+        <div class="col-sm-1" style="">
+        </div>
+        <div class="col-sm-5 p-0 px-3 py-3 overflow-auto" style="margin-top: 70px;overflow-y: scroll;height: 500px;">
+          <h5 id="itemCat"></h5>
+            <div class="p-2 rounded" style="background-color: white;">
+                <table class="table table-borderless" id="itemsTable">
+                  </table>
+            </div>
+            
+        </div>
+        <div class="col-sm-1 p-0"></div>
+        <div class="col-sm-5 p-0 py-3 overflow-auto" id="hiddenDiv" style="height: 500px;overflow-y: scroll;visibility: hidden;margin-top: 50px;">
+            <div class="p-3">
+              <h5>Order Items</h5>
+                <div class="p-2 rounded" style="background-color: white;">
+                    <table class="table table-borderless" id="orderTable">
+                        <thead>
+                        <tr>
+                            <th>item</th>
+                            <th>price</th>
+                            <th>quantity</th>
+                            <th>total</th>
+                        </tr>
+                        </thead>
+                      </table>
+                </div>
+            </div>
+            <div class="p-3">
+              <h5>Bill Details</h5>
+                <div class="p-2 rounded" style="background-color: white;">
+
+                    <table class="table table-borderless">
+                        <tr>
+                            <td>Item Total</td>
+                            <td style="float: right;" id="itemTotal">0</td>
+                        </tr>
+                        <tr>
+                            <td>Taxes</td>
+                            <td style="float: right;" id="taxes">10%</td>
+                        </tr>
+                        <tr>
+                            <td>To Pay</td>
+                            <td style="float: right;" id="toPay">0</td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+            <div>
+                <dialog id="myModal" class="p-5 border-0" style="width: 40%;">
+                    <p class="text-center" style="color:#0d6efd;font-family:  cursive;font-size: 24px;">Customer Contact Number</p>
+                    
+                        
+                        <!-- <form> -->
+                            
+                            <br>
+                            <div class="center mx-3">
+                                <!-- <label for="Phone" >Customer Contact Number</label> -->
+                                <input type="number" class="w-100 rounded border-2" style="height: 35px;border: 2px solid #0d6efd;" maxlength="10" id="phone" placeholder="10 digit phone number" name="phone" oninput="checkLength()">
+                                <div id="checkNum" style="color: red;"></div>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="text-center">
+                                <button class="btn btn-warning mx-2" onclick="document.getElementById('myModal').close();" style="background-color: rgb(243, 69, 69);color: white;font-size: 12px;font-weight: bold;">Cancel Order</button><button class="btn btn-success" onclick="addToInvoice()" style="font-size: 12px;">Order</button>
+                              </div>
+                            <br>
+                          <!-- </form> -->
+                  </dialog>
+            </div>
+            <div class="p-3">
+                <button class="btn btn-primary" style="float:right" onclick="askContact()">Place Order</button>
+            </div>
+        </div>
+    </div>
+  
+</div>
+<script src="NewOrderPage.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html> 

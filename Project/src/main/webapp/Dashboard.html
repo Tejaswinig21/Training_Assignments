@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto+Condensed&family=Roboto:wght@300&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    
+    <title>Document</title>
+    <style>
+        body{
+             font-family: 'Roboto', sans-serif;
+        }
+
+        .item-card1{
+            background : lightblue;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(236, 235, 235);" onload="getItemsCount();getRevenueByYear();getMostOrderedItems()">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light w-100" style="margin-bottom: 0px;font-size: 16px;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="foodZone.html" style="padding:15px 5px;font-size: 16px;">foodZone</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="Dashboard.html" style="color: #0d6efd;">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Categories.html">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="NewOrderPage.html">Billing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Invoice.html">Invoices</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="text" placeholder="Search">
+              <button class="btn btn-primary" type="button">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div class="m-3">
+          <h1 style="color: #0d6efd;">Dashboard</h1>
+          <p style="color: gray;">Welcome to foodZone</p>
+
+          <div class="row d-flex justify-content-around">
+              <div class="col-sm-3 p-4">
+                  <div class="well rounded text-center p-3" style="background-color: white;">
+                    <p style="color: gray;">Total Categories</p>
+                    <h1 class="font-weight-bold" id="totalcategories"></h1>
+                </div>
+              </div>
+              <div class="col-sm-3 p-4">
+                  <div class="well rounded text-center p-3" style="background-color: white;">
+                    <p style="color: gray;">Total Items</p>
+                    <h1 class="font-weight-bold" id="totalitems"></h1>
+                </div>
+                  
+                </div>
+              <div class="col-sm-3 p-4">
+                  <div class="well rounded text-center p-3" style="background-color: white;">
+                    <p style="color: gray;">Total Revenue</p>
+                    <h1 class="font-weight-bold" id="totalrevenue"></h1>
+                </div>
+                </div>
+                <div class="col-sm-3 p-4">
+                    <div class="well rounded text-center p-3" style="background-color: white;">
+                        <p style="color: gray;">Total Orders</p>
+                        <h1 class="font-weight-bold" id="totalorders"></h1>
+                    </div>
+                </div>
+          </div>
+      </div>
+      <div class="row p-4">
+          <div class="col-sm-6"><canvas id="myChart" style="width:50%;max-width:600px;"></canvas></div>
+          <div class="col-sm-6 pl-5 pr-5 pt-2 pb-2">
+              <div class="row p-4 rounded" style="background-color: white;">
+               <p>Today's</p>
+               <div class="col-sm-6 p-4">
+                <div class="well rounded text-center p-3" style="background-color: #0d6dfd20;">
+                    <p style="color: gray;">Today's Revenue</p>
+                    <h1 class="font-weight-bold" id="todaytotalrevenue" style="color: #0d6efd;"></h1>
+                </div>  
+            </div>
+            <div class="col-sm-6 p-4">
+                <div class="well rounded text-center p-3" style="background-color: #0d6dfd20;">
+                    <p style="color: gray;">Today's Orders</p>
+                    <h1 class="font-weight-bold" id="todaytotalorders" style="color: #0d6efd;"></h1>
+                </div>  
+            </div>
+            
+            </div>
+          </div>
+      </div>
+      <div class="row p-4">
+          <div class="col-sm-6" style="background-image:url('css/cooking-removebg-preview-removebg-preview.png') ;background-size: cover;">
+            
+            
+          </div>
+          <div class="col-sm-6">
+              <div class="well rounded p-4" style="background-color: white;">
+                  <p>Most Ordered Items</p>
+                  <div class="row" id="topfive">
+                    <div class="col-2">#</div>
+                    <div class="col-6">
+                        <p class="m-0">Item</p>
+                        <p class="m-0">Price</p>
+                    </div>
+                    <div class="col-4"><i class="fa-solid fa-chart-line" style="color: #0d6efd;"></i> Revenue</div>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+      <script src="Dashboard.js"></script>
+</body>
+</html>
